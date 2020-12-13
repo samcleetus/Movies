@@ -1,0 +1,24 @@
+<html>
+    <title>Form</title>
+    <head>
+        <style>
+            form{font-family: "Trebuchet MS", Helvetica, sans-serif;text-align: center;font-size: large;}
+            p{font-family: "Trebuchet MS", Helvetica, sans-serif;text-align: center;font-size: large;color: #c20808;font-weight: bold;}
+        </style>
+    </head>
+    <body>
+
+        <br>
+        {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        <form action="{{ url_for('check_character') }}" method="POST">
+            <label for="Character name" style="font-size: x-large;">Add a new Character</label><br>
+            <label for="title">Character Name:</label><br>
+            <input type="text" id="character_name" name="character_name"><br>
+            <label for="title">Movie ID:</label><br>
+            <input type="text" id="character_movieid" name="character_movieid"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
