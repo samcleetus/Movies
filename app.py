@@ -10,7 +10,6 @@ cursor = cn.cursor()
 from sqlite3 import Error
 app = Flask(__name__)
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
