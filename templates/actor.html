@@ -1,9 +1,19 @@
 {% extends "base.html" %}
         
             {% block content %}
+            <form action="{{ url_for('search_actor') }}" method="POST">
+                &nbsp;  &nbsp;<input id="name" type="text" name="name" placeholder="Search. . ."> 
+                <p>&nbsp; &nbsp;Search for an actor here</p>
+                <!--<input type="submit" value="Submit">-->
+            </form>
             <table class="table table-hover table-striped">
                 <thead clas="thead-dark">
                     <a href="http://127.0.0.1:5000/actor_form">Add new Actor</a> 
+                    <!--<p>upload a photo</p>
+                    <form action="/action_page.php">
+                        <input type="file" id="myFile" name="filename">
+                        <input type="submit">
+                      </form>-->
                     <th scope="col">Actor ID</th>  
                     <th scope="col">Actor Name</th>
                 </thead>
@@ -13,6 +23,9 @@
                     <tr>
                         <td>{{actor.actorid}}</td>
                         <td>{{actor.name}}</a></td>
+                        <td>
+                            <a href="{{ url_for('delete_actor', actor_id=actor.actorid)}}">Delete</a>
+                        </td>
                         
                     </tr>
                 {% endfor %}

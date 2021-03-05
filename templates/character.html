@@ -1,6 +1,11 @@
 {% extends "base.html" %}
         
             {% block content %}
+            <form action="{{ url_for('search_character') }}" method="POST">
+                &nbsp;  &nbsp;<input id="name" type="text" name="name" placeholder="Search. . ."> 
+                <p>&nbsp; &nbsp;Search for a character here</p>
+                <!--<input type="submit" value="Submit">-->
+            </form>
             <table class="table table-hover table-striped">
                 <thead clas="thead-dark">
                     <a href="http://127.0.0.1:5000/character_form">Add new Character</a>
@@ -8,11 +13,18 @@
                     <th scope="col">Character Name</th>
                 </thead>
 
+                {% for message in get_flashed_messages() %}
+                <p style="font-family: Trebuchet MS, Helvetica, sans-serif;text-align: center;font-size: large;color: #c20808;font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+
                 <tbody> 
                 {% for character in characters %}
                     <tr>
                         <td>{{character.characterid}}</td>
                         <td>{{character.name}}</a></td>
+                        <td>
+                            <a href="{{ url_for('delete_character', character_id=character.characterid)}}">Delete</a>
+                        </td>
                         
                     </tr>
                 {% endfor %}

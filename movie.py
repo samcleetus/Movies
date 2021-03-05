@@ -6,6 +6,7 @@ class Movie():
         super().__init__()
         self.movieid = ""
         self.title = ""
+        #self.description = ""
 
     def to_dict(self) -> {}:
         return self.__dict__
@@ -24,6 +25,7 @@ class Movie():
         c = Movie()
         c.movieid = row['movieid']
         c.title = row['title']
+        #c.description = row['description']
         return c
 
     @classmethod
@@ -31,4 +33,5 @@ class Movie():
         a = Movie()
         a.movieid = row['movieid']
         a.title = row['title']
+        #a.description = row['description']
         return a

@@ -9,23 +9,20 @@
     </head>
     <body>
 
-
-
         <br>
         {% for message in get_flashed_messages() %}
         <p>{{ message }}</p>
         {% endfor %}
-        <form action="{{ url_for('check_character') }}" method="POST">
-            <label for="Character name" style="font-size: x-large;">Add a new Character</label><br>
-            <label for="title">Character Name:</label><br>
-            <input type="text" id="character_name" name="character_name"><br>
+        <form action="{{ url_for('new_description_form') }}" method="POST">
+            <label for="description" style="font-size: x-large;">Write the summary</label><br>
+            <input type="text" id="description" name="description"><br>
             <label for="title">Movie ID:</label><br>
-            <input type="text" id="character_movieid" name="character_movieid"><br>
+            <input type="text" id="description_movieid" name="description_movieid"><br>
             <input type="submit" value="Submit">
         </form>
 
         <table align="center">
-            <thead clas="thead-dark">
+            <thead class="thead-dark">
                 <th><u>Movie ID</u></th>   
                 <th scope="col"><u>Movie Title</u></th>
             <tbody> 

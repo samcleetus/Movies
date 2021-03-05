@@ -1,0 +1,19 @@
+{% extends "base_description.html" %}
+
+<head>
+    <style>
+    </style>
+</head>
+        
+            {% block content %}
+            <table class="table table-bordered table-striped table-hover" style="font-family: Trebuchet MS, Helvetica, sans-serif;text-align: center;font-size: large;">
+
+                <tbody> 
+                {% for description in descriptions %}
+                    <tr>
+                        <td>{{description.description}}</td>                        
+                    </tr>
+                {% endfor %}
+            {% endblock %}
+                </tbody>
+        </table>
