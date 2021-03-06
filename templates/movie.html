@@ -9,7 +9,7 @@
             </form>
             <table class="table table-hover table-striped">
                 <thead clas="thead-dark">
-                    <a href="http://127.0.0.1:5000/movie_form">Add new Movie &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a href="http://127.0.0.1:5000/description_form">Add a description for a movie</a>
+                    <a href="{{ url_for('movie_form')}}">Add new Movie &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a href="{{ url_for('get_description')}}">Add a description for a movie</a>
                     <th>Movie ID</th>   
                     <th scope="col">Movie Title</th>
                 </thead>

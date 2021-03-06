@@ -34,12 +34,12 @@
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
             <h5 class="my-0 mr-md-auto font-weight-normal">Movies DB</h5>
             <nav class="my-2 my-md-0 mr-md-3">
-                <a href="http://127.0.0.1:5000/all_movies">Movies &nbsp;</a>
-                <a href="http://127.0.0.1:5000/all_characters">Characters &nbsp;</a>
-                <a href="http://127.0.0.1:5000/all_actors">Actors &nbsp;</a>
+                <a href="{ url_for('all_movies')}">Movies &nbsp; </a>
+                <a href="{ url_for('all_characters')}">Characters &nbsp;</a>
+                <a href="{ url_for('all_actors')}">Actors &nbsp;</a>
                 <!--<a href="http://127.0.0.1:5000/all_tracks">Tracks &nbsp;</a>-->
             </nav>
-            <a href="http://127.0.0.1:5000/">Home</a>
+            <a href="{ url_for('home')}">Home</a>
         </div>
 
 <!--{% set search_url = '' %}
